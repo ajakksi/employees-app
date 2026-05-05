@@ -9,7 +9,7 @@ function App(){
 
     const data = [
         {name: 'Alex M.', salary: 800, increase: true, id:1},
-        {name: 'Jan K.', salary: 2000, increase: false, id:2},
+        {name: 'Jan K.', salary: 2000, increase: true, id:2},
         {name: 'Kate B.', salary: 5000, increase: false, id:3},
         {name: 'Michael R.', salary: 1500, increase: false, id:4},
     ];
@@ -24,7 +24,7 @@ function App(){
             </div>
             
             <EmployeesList data={data}/>
-            <EmployeesAddForm/>
+            <EmployeesAddForm/>     
 
         </div>
     );
