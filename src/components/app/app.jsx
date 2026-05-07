@@ -20,6 +20,7 @@ class App extends Component{
             {name: 'Michael R.', salary: 1500, increase: false, id:4}
             ]
         }
+        this.maxId= 5;
     }
 
     deleteItem = (id) => {
@@ -28,6 +29,22 @@ class App extends Component{
                 data: data.filter(item=> item.id !== id)
             }
 
+        })
+    }
+
+    AddEmployees = (name,salary) =>{
+        const newItem ={
+            name,
+            salary,
+            increase: false,
+            id: this.maxId++
+        }
+
+
+        this.setState(({data}) => {
+            return{
+                data: [...data, newItem ]
+            }
         })
     }
 
@@ -45,7 +62,8 @@ class App extends Component{
                 <EmployeesList 
                 data={this.state.data}
                 onDelete={this.deleteItem}/>
-                <EmployeesAddForm/>     
+                <EmployeesAddForm
+                onAddEmployees={this.AddEmployees}/>     
 
             </div>
         );
