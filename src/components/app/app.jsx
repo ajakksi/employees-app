@@ -33,7 +33,8 @@ class App extends Component{
     }
 
     AddEmployees = (name,salary) =>{
-        const newItem ={
+        if(name.trim().length>=2 && salary){
+            const newItem ={
             name,
             salary,
             increase: false,
@@ -41,12 +42,13 @@ class App extends Component{
             id: this.maxId++
         }
 
-
-        this.setState(({data}) => {
+         this.setState(({data}) => {
             return{
                 data: [...data, newItem ]
             }
         })
+        }
+       
     }
 
     onToggleProp = (id,prop) =>{
